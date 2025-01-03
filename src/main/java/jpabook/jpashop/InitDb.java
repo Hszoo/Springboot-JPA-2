@@ -20,7 +20,7 @@ import javax.persistence.EntityManager;
  */
 @Component
 @RequiredArgsConstructor
-public class InitDb {
+public class InitDb { // 애플리케이션 실행 시점에, DB에 초기 데이터 입력
 
     private final InitService initService;
 
@@ -40,7 +40,7 @@ public class InitDb {
         public void dbInit1() {
             System.out.println("Init1" + this.getClass());
             Member member = createMember("userA", "서울", "1", "1111");
-            em.persist(member);
+            em.persist(member); // 영속 상태로
 
             Book book1 = createBook("JPA1 BOOK", 10000, 100);
             em.persist(book1);
